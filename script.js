@@ -10,3 +10,13 @@ comments_btn.addEventListener("click", () => {
     comments_btn.innerHTML = "Hide comments";
   }
 });
+
+function validateCommentForm() {
+  var author = document.getElementById("author").value;
+  var text = document.getElementById("text").value;
+
+  if (!author || !text) {
+    alert("Molimo popunite sva polja za unos komentara.");
+    return false;
+  }
+}
