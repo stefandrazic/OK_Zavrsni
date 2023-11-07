@@ -13,7 +13,7 @@
                     <textarea class="form-control" id="body" name="body"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="author">Author:</label>
+                    <label for="author">Author id:</label>
                     <input type="text" class="form-control" id="author" name="author">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

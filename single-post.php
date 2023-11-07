@@ -10,7 +10,7 @@
             if (isset($_GET['post_id'])) {
 
                 // pripremamo upit
-                $sql1 = "SELECT * FROM posts p WHERE p.id = {$_GET['post_id']}";
+                $sql1 = "SELECT p.*, users.id as userID, users.first_name, users.last_name FROM posts p inner join users on p.author = users.id WHERE p.id = {$_GET['post_id']}";
                 $post = getData($sql1, $connection, $fetchAll = false);
 
                 $sql2 = "SELECT * FROM comments c WHERE c.post_id = {$_GET['post_id']}";
@@ -18,7 +18,7 @@
 
                 // koristite var_dump kada god treba da proverite sadrzaj neke promenjive
                 // echo '<pre>';
-                // var_dump($comments);
+                // var_dump($post);
                 // echo '</pre>';
                 ?>
                 <?php
@@ -35,13 +35,14 @@
                 </a>
                 <p class="blog-post-meta">
                     <?php echo ($post['created_at']) ?> <a href="#">
-                        <?php echo ($post['author']) ?>
+                        <?php echo ($post['first_name'] . ' ' . $post['last_name']) ?>
                     </a>
                 </p>
 
                 <p>
                     <?= $post['body'] ?>
                 </p>
+                <button class="btn btn-primary" onclick="confirmDelete()">Delete this post</button>
             </div>
             <?php include('comments.php') ?>
         </div>
@@ -54,5 +55,9 @@
     </div>
     <!-- /.row -->
 </main>
+<script>
+    var post_id = <?= $post['id']; ?>;
+</script>
+
 <!-- /.container -->
 <?php include('footer.php') ?>

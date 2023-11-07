@@ -3,7 +3,7 @@
 <?php
 
 // pripremamo upit
-$sql = "SELECT * FROM posts ORDER BY created_at DESC";
+$sql = "SELECT posts.*, users.id as userID, users.first_name, users.last_name FROM posts inner join users on posts.author = users.id ORDER BY created_at DESC";
 $posts = getData($sql, $connection, $fetchAll = true);
 
 // koristite var_dump kada god treba da proverite sadrzaj neke promenjive
@@ -24,7 +24,7 @@ $posts = getData($sql, $connection, $fetchAll = true);
         </a>
         <p class="blog-post-meta">
             <?php echo ($post['created_at']) ?> <a href="#">
-                <?php echo ($post['author']) ?>
+                <?php echo ($post['first_name'] . ' ' . $post['last_name']) ?>
             </a>
         </p>
 
