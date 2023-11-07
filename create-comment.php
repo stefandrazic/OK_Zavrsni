@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $text = $_POST['text'];
     $post_id = $_POST['post_id'];
 
-    $sql = "INSERT INTO comments (Author, Text, Post_id) VALUES (:author, :text, :post_id)";
+    $sql = "INSERT INTO comments (author, text, post_id) VALUES (:author, :text, :post_id)";
     $params = [':author' => $author, ':text' => $text, ':post_id' => $post_id];
 
     $stmt = $connection->prepare($sql);

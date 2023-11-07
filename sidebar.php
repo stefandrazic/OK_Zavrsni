@@ -1,5 +1,5 @@
 <?php
-$sql4 = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 3";
+$sql4 = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
 $posts5 = getData($sql4, $connection, $fetchAll = true);
 ?>
 
