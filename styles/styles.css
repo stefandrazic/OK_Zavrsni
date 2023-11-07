@@ -24,3 +24,7 @@ h6 {
 .comments h3 {
   margin-top: 20px;
 }
+
+.hide_comment {
+  display: none;
+}

@@ -43,21 +43,13 @@
                     <?= $post['body'] ?>
                 </p>
                 <button class="btn btn-primary" onclick="confirmDelete()">Delete this post</button>
+                <script>
+                    var post_id = <?= $post['id']; ?>;
+                </script>
             </div>
             <?php include('comments.php') ?>
         </div>
-
-        <!-- /.blog-main -->
-
         <?php include('sidebar.php') ?>
-
-        <!-- /.blog-sidebar -->
     </div>
-    <!-- /.row -->
 </main>
-<script>
-    var post_id = <?= $post['id']; ?>;
-</script>
-
-<!-- /.container -->
 <?php include('footer.php') ?>

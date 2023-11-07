@@ -1,13 +1,26 @@
 const comments_btn = document.querySelector("#comments-btn");
 const comments_list = document.querySelector("#comments-list");
+const comments_li = document.querySelectorAll(".comment");
 
 comments_btn.addEventListener("click", () => {
+  // if (comments_btn.innerHTML === "Hide comments") {
+  //   comments_list.style.display = "none";
+  //   comments_btn.innerHTML = "Show comments";
+  // } else {
+  //   comments_list.style.display = "block";
+  //   comments_btn.innerHTML = "Hide comments";
+  // }
+
   if (comments_btn.innerHTML === "Hide comments") {
-    comments_list.style.display = "none";
-    comments_btn.innerHTML = "Show comments";
+    comments_li.forEach((comment) => {
+      comment.classList.add("hide_comment");
+      comments_btn.innerHTML = "Show comments";
+    });
   } else {
-    comments_list.style.display = "block";
-    comments_btn.innerHTML = "Hide comments";
+    comments_li.forEach((comment) => {
+      comment.classList.remove("hide_comment");
+      comments_btn.innerHTML = "Hide comments";
+    });
   }
 });
 
