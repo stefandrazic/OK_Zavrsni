@@ -1,9 +1,10 @@
 <div class="comments">
     <hr>
+    <button class="btn btn-default" id="comments-btn">Hide comments</button>
     <h3>Comments</h3>
-    <ul>
+    <ul id="comments-list">
         <?php foreach ($comments as $comment) { ?>
-            <li>
+            <li class="">
                 <h4>
                     <?= $comment['author'] ?>
                 </h4>
