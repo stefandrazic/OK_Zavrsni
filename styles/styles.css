@@ -14,3 +14,9 @@ h5,
 h6 {
   color: #b34848;
 }
+
+.comments li {
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid black;
+}

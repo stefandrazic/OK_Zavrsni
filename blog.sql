@@ -27,3 +27,14 @@ VALUES (
         'Stefan',
         '2023-10-14'
     );
+CREATE TABLE comments (
+    id int auto_increment,
+    author varchar(50) not null,
+    text text not null,
+    post_id int not null,
+    PRIMARY KEY (id),
+    FOREIGN KEY (post_id) REFERENCES posts (id)
+);
+INSERT INTO comments (author, text, post_id)
+VALUES ('Marko', 'Vau, super ti je post :D', 1),
+    ('Luka', 'Vau, super ti je post :D', 1);
